@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    ports: 
+      - "3000:3000"
+    environment:
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - DB_DATABASE=test1
+      - DB_USER=root
+      - DB_PASS=s1mpl3
+  mongodb:
+    image: mongo
