@@ -3,7 +3,7 @@
 1.建立一個Express專案，並寫好get/post/patch/delete的api router
 https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
-2.安裝mongoDB環境
+2.安裝並啟動mongoDB環境
 
 （Mac）
 
@@ -14,17 +14,18 @@ https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
 (Windows)
 ```
-
+作法待定
 ```
 
-3.下載robomongo
+3.下載robomongo（mongoDB用的UI控制介面）
+
 https://robomongo.org/download
 
 4.在Express專案中安裝mongoose套件
 ```
 # yarn add mongoose
 ```
-http://mongoosejs.com/
+> 可參考此網址：http://mongoosejs.com/
 
 5.app.js中加入
 ```
@@ -35,6 +36,8 @@ mongoose.connect('mongodb://localhost/test');
 6.專案內加入dotenv套件，並建立.env檔案將環境變數存入，並且在app.js中引入，改寫
 
 ![](/assets/todolist_1.png)
+
+> 可參考此網址：https://github.com/motdotla/dotenv
 
 7.建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
 
@@ -59,5 +62,3 @@ mongoose.connect('mongodb://localhost/test');
 ![](/assets/todolist_3.png)
 
 9.作業：完成todolist的CRUD
-
-![](/assets/todolist_4.png)
