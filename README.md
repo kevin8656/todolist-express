@@ -134,7 +134,7 @@ mongoose.connect('mongodb://localhost/test');
 
 ![](/assets/todolist_8.png)
 
-因為.env.example檔案不符合gitignore中.env的格式，因此會將此環境範例push至git上，供後續接手專案的人做為參考。
+因為.env.example不在gitignore中的忽略清單內，因此會將此環境範例push至git上，供後續接手專案的人做為參考。
 
 ![](/assets/todolist_12.png)
 
