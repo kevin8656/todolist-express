@@ -120,11 +120,15 @@ mongoose.connect('mongodb://localhost/test');
 > node.js的檔案忽略請參考：
 https://github.com/github/gitignore/blob/master/Node.gitignore
 
-七、在app.js中引入../models/Todo，改寫
+七、在app.js中引入../models/Todo，將剛剛五、中的程式碼改寫成下圖中的樣子：
+
+> 請注意要使用${}變數，外面的字串包覆是``不是''
 
 ![](/assets/todolist_1.png)
 
 八、建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
+
+> 有點類似MVC裡面的ADO.net資料模型面做的事情，專業一點講叫做DB ORM，而因為這邊使用的是noSQL，所以會在程式中將db Schema定義好
 
 ![](/assets/todolist_5.png)
 
