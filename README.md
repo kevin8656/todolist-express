@@ -5,16 +5,37 @@ https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
 2.安裝並啟動mongoDB環境
 
-（Mac）
+**（Mac版本做法）**
 
 ``` 
 # brew install mongoDB
 # brew service start mongoldb
 ```
 
-(Windows)
+**(Windows版本做法)**
+下載MongoDB
+
+[Mongodb下載連結](https://www.mongodb.com/download-center#community)
+
+Configure a Windows Service
+
+[參考網站](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#configure-a-windows-service-for-mongodb-community-edition)
+
 ```
-作法待定
+mkdir c:\data\db
+mkdir c:\data\log
+```
+
+create file
+
+```
+C:\Program Files\MongoDB\Server\3.6\mongod.cfg
+```
+
+install as a service
+
+```
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\3.6\mongod.cfg" --install
 ```
 
 3.下載robomongo（mongoDB用的UI控制介面）
