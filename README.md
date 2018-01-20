@@ -1,6 +1,20 @@
 # 20180119-Express todoList with mongo db
 
 一、建立一個Express專案，並寫好get/post/patch/delete的api router
+
+步驟概述：
+1.建立/routes/todo.js檔案
+
+![](/assets/todolist_9.png)
+
+2.在app.js中載入此檔案並設定api觸發的路徑
+
+![](/assets/todolist_10.png)
+
+3.將/routes/index.js中的程式碼複製到/routes/todo.js中，並開始改寫成get/post/patch/delete
+
+![](/assets/todolist_11.png)
+
 https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
 二、安裝並啟動mongoDB環境
