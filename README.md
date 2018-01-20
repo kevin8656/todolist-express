@@ -105,21 +105,34 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 ```
 
-六、專案內加入dotenv套件，並建立.env檔案將環境變數存入，並且在app.js中引入，改寫
+六、專案內加入dotenv套件，並建立.env檔案將環境變數存入（環境變數內容請依照自己的環境來更改）
+
+> 如何加入dotenv套件，可參考此網址：https://github.com/motdotla/dotenv
+
+1.建立.env檔案並且輸入所需要的環境變數
+
+![](/assets/todolist_7.png)
+
+2.通常.env檔案不會跟著專案push到git上面（因為每個人的環境變數不盡相同），因此我們新增一個.gitignore檔案，並且在裡面直接加入node.js的檔案忽略
+
+![](/assets/todolist_8.png)
+
+> node.js的檔案忽略請參考：
+https://github.com/github/gitignore/blob/master/Node.gitignore
+
+七、在app.js中引入../models/Todo，改寫
 
 ![](/assets/todolist_1.png)
 
-> 可參考此網址：https://github.com/motdotla/dotenv
-
-七、建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
+八、建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
 
 ![](/assets/todolist_5.png)
 
-八、在routes/todo.js中引入/models/Todo.js
+九、在routes/todo.js中引入/models/Todo.js
 
 ![](/assets/todolist_6.png)
 
-九、修改todo.js中的api post，改為存資料入mongodb，並且使用async
+十、修改todo.js中的api post，改為存資料入mongodb，並且使用async
 
 ![](/assets/todolist_2.png)
 
@@ -129,8 +142,8 @@ mongoose.connect('mongodb://localhost/test');
 > 
 > **async:** https://jigsawye.com/2016/04/18/understanding-javascript-async-await/
 
-8.Run專案會發現有了Promise的Error，解決方式就是在app.js加上此行程式
+十一.Run專案會發現有了Promise的Error，解決方式就是在app.js加上此行程式
 
 ![](/assets/todolist_3.png)
 
-十、作業：完成todolist的CRUD
+十二、作業：完成todolist的CRUD
