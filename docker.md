@@ -7,26 +7,27 @@
 + [Full ISO](https://bintray.com/vmware/photon/download_file?file_path=photon-1.0-62c543d.iso) (Photon OS 1.0, Revision 2 Binaries)
 + 更新作業系統
 ```bash
-tdnf update -y
-tdnf install wget git rsync -y
+# tdnf update -y
+# tdnf install wget git rsync -y
 ```
 
 ## Open SSH
 + 查看過去指令
 ```bash
-history
+# history
 ```
 
 + 修改SSH
 ```bash
-vi /etc/ssh/sshd_config
+# vi /etc/ssh/sshd_config
 /PermitRootLogin yes
-systemctl restart sshd
+
+# systemctl restart sshd
 ```
 
 + 查看IP
 ```bash
-ifconfig eth0
+# ifconfig eth0
 ```
 
 + 改用 SSH 連入
@@ -37,34 +38,34 @@ ifconfig eth0
 
 + 服務狀態與啟用
 ```bash
-systemctl status docker
-systemctl enable docker
+# systemctl status docker
+# systemctl enable docker
 ```
 
 + 安裝 Docker-Compose
 ```bash
-curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+# curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 ```
 
 + 權限修改
 ```bash
-chmod +x /usr/local/bin/docker-compose
+# chmod +x /usr/local/bin/docker-compose
 ```
 
 + 版本查詢
 ```bash
-docker-compose --version
+# docker-compose --version
 ```
 
 ## Clone Project
 + clone [Express Demo](https://github.com/explooosion/Node.js-demo)
 ```bash
-git clone https://github.com/explooosion/Node.js-demo.git
+# git clone https://github.com/explooosion/Node.js-demo.git
 ```
 
 + 進入專案
 ```bash
-cd Node.js-demo/
+# cd Node.js-demo/
 ```
 
 ## Docker Build
@@ -72,20 +73,20 @@ cd Node.js-demo/
 	+ demo: namespace
 	+ myapp: project
 ```bash
-docker build -t demo/myapp .
+# docker build -t demo/myapp .
 ```
 
 + 查看映像檔(可看到已有容器)
 	+ -a:所有過去容器
 	+ -q:僅顯示ID
 ```bash
-docker images
+# docker images
 ```
 
 ## Docker Run
 + 建立容器並運行
 ```bash
-docker run -p 8080:3000 --name myapp -d demo/myapp
+# docker run -p 8080:3000 --name myapp -d demo/myapp
 ```
 	+ -d:背景執行
 	+ 外部的 8080 映射到容器的 3000
@@ -94,36 +95,36 @@ docker run -p 8080:3000 --name myapp -d demo/myapp
 	+ -a:包含過去容器
 	+ -q:僅顯示容器ID
 ```bash
-docker ps -a
+# docker ps -a
 ```
 
 ## Docker Stop
 + 停止容器運行
 ```bash
-docker stop myapp
+# docker stop myapp
 ```
 
 ## Docker Start
 + 執行容器運行
 ```bash
-docker start myapp
+# docker start myapp
 ```
 
 ## Docker Remove
 + 移除容器
 ```bash
-docker rm myapp
+# docker rm myapp
 ```
 
 + 移除所有容器
 ```bash
-docker rm $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
 ```
 
 ## Docker Log
 + 查看紀錄
 ```bash
-docker logs myapp
+# docker logs myapp
 ```
 
 

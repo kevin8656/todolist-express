@@ -7,7 +7,7 @@ https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
 **（Mac版本做法）**
 
-``` 
+```bash
 # brew install mongoDB
 # brew service start mongoldb
 ```
@@ -94,13 +94,13 @@ storage:
 https://robomongo.org/download
 
 四、在Express專案中安裝mongoose套件
-```
+```bash
 # yarn add mongoose
 ```
 > 可參考此網址：http://mongoosejs.com/
 
 五、app.js中加入
-```
+```js
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 ```
