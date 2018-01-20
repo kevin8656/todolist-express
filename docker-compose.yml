@@ -13,3 +13,5 @@ services:
       - DB_PASS=s1mpl3
   mongodb:
     image: mongo
+    ports: 
+      - "27017:27017"
