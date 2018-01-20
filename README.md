@@ -134,7 +134,7 @@ mongoose.connect('mongodb://localhost/test');
 
 ![](/assets/todolist_8.png)
 
-而因為我們還是要告訴接手專案的人，我們用到了哪些.env檔案裡面的環境變數設定，所以我們會新增一個.env.example檔案，把.env的內容複製進去並且將值去掉，此檔案會跟著專案倍push到git上。
+因為.env.example檔案不符合gitignore中.env的格式，因此會將此環境範例push至git上，供後續接手專案的人做為參考。
 
 ![](/assets/todolist_12.png)
 
