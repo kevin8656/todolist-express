@@ -1,4 +1,4 @@
-# 20180119-皓神上課
+# 20180119-Express todoList with mongo db
 
 1.建立一個Express專案，並寫好get/post/patch/delete的api router
 https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
@@ -36,7 +36,15 @@ mongoose.connect('mongodb://localhost/test');
 
 ![](/assets/todolist_1.png)
 
-7.修改todo.js中的api post，改為存資料入mongodb，並且使用async
+7.建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
+
+![](/assets/todolist_5.png)
+
+8.在routes/todo.js中引入/models/Todo.js
+
+![](/assets/todolist_6.png)
+
+9.修改todo.js中的api post，改為存資料入mongodb，並且使用async
 
 ![](/assets/todolist_2.png)
 
@@ -50,6 +58,6 @@ mongoose.connect('mongodb://localhost/test');
 
 ![](/assets/todolist_3.png)
 
-9.作業：完成todolist的CRUD
+9.作業：完成todolist的CRUD
 
 ![](/assets/todolist_4.png)
