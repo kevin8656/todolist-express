@@ -1,9 +1,9 @@
 # 20180119-Express todoList with mongo db
 
-1.建立一個Express專案，並寫好get/post/patch/delete的api router
+一、建立一個Express專案，並寫好get/post/patch/delete的api router
 https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
-2.安裝並啟動mongoDB環境
+二、安裝並啟動mongoDB環境
 
 **（Mac版本做法）**
 
@@ -14,62 +14,112 @@ https://bignerdcoding.gitbooks.io/express/content/gou-jian-api-jie-kou.html
 
 **(Windows版本做法)**
 
-下載MongoDB
+1.下載MongoDB
 
 [Mongodb下載連結](https://www.mongodb.com/download-center#community)
 
-Configure a Windows Service
+選擇Community Server分頁並下載
 
-[參考網站](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#configure-a-windows-service-for-mongodb-community-edition)
+![](/assets/mongodb-installation_1.png)
+
+2.Step By Step Installation
+
+![](/assets/mongodb-installation_2.png)
+
+Complete 儲存至預設路徑，Costom 可自訂儲存路徑
+
+![](/assets/mongodb-installation_3.png)
+
+選擇儲存路徑
+
+![](/assets/mongodb-installation_4.png)
+
+取消勾選Install MongoDB Compass
+
+![](/assets/mongodb-installation_5.png)
+
+點選Install
+
+![](/assets/mongodb-installation_6.png)
+
+3.自訂存放db及log檔位置，範例為：
+
+D:\MongoDB\data\db
+
+D:\MongoDB\data\log
+
+![](/assets/mongodb-installation_7.png)
+
+4.新增一個mongod.cfg檔案，範例為：
+
+D:\MongoDB\Server\3.6\mongod.cfg，並以記事本開啟檔案。
+
+![](/assets/mongodb-installation_8.png)
+
+5.將此段程式碼放入檔案中，設定存放log檔及db資料路徑
 
 ```
-mkdir c:\data\db
-mkdir c:\data\log
+systemLog:
+    destination: file
+    path: D:\MongoDB\data\log\mongod.log
+storage:
+    dbPath: D:\MongoDB\data\db
 ```
 
-create file
+6.點選Win，搜尋cmd找到命令提示字元，右鍵選擇以系統管理員身分執行開啟
 
-```
-C:\Program Files\MongoDB\Server\3.6\mongod.cfg
-```
+![](/assets/mongodb-installation_9.png)
 
-install as a service
-
+7.找到mongod.exe檔案執行，輸入程式碼
 ```
-"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --config "C:\Program Files\MongoDB\Server\3.6\mongod.cfg" --install
+"D:\MongoDB\Server\3.6\bin\mongod.exe" --config D:\MongoDB\Server\3.6\mongod.cfg" –install
 ```
 
-3.下載robomongo（mongoDB用的UI控制介面）
+![](/assets/mongodb-installation_10.png)
+
+8.開啟cmd搜尋服務
+
+![](/assets/mongodb-installation_11.png)
+
+9.找到MongoDB
+
+![](/assets/mongodb-installation_12.png)
+
+10.啟動mongoDB服務
+
+![](/assets/mongodb-installation_13.png)
+
+三、下載robomongo（mongoDB用的UI控制介面）
 
 https://robomongo.org/download
 
-4.在Express專案中安裝mongoose套件
+四、在Express專案中安裝mongoose套件
 ```
 # yarn add mongoose
 ```
 > 可參考此網址：http://mongoosejs.com/
 
-5.app.js中加入
+五、app.js中加入
 ```
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 ```
 
-6.專案內加入dotenv套件，並建立.env檔案將環境變數存入，並且在app.js中引入，改寫
+六、專案內加入dotenv套件，並建立.env檔案將環境變數存入，並且在app.js中引入，改寫
 
 ![](/assets/todolist_1.png)
 
 > 可參考此網址：https://github.com/motdotla/dotenv
 
-7.建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
+七、建立models資料夾，並且建立一個Todo.js用來寫noSQL DBSchema
 
 ![](/assets/todolist_5.png)
 
-8.在routes/todo.js中引入/models/Todo.js
+八、在routes/todo.js中引入/models/Todo.js
 
 ![](/assets/todolist_6.png)
 
-9.修改todo.js中的api post，改為存資料入mongodb，並且使用async
+九、修改todo.js中的api post，改為存資料入mongodb，並且使用async
 
 ![](/assets/todolist_2.png)
 
@@ -83,4 +133,4 @@ mongoose.connect('mongodb://localhost/test');
 
 ![](/assets/todolist_3.png)
 
-9.作業：完成todolist的CRUD
+十、作業：完成todolist的CRUD
