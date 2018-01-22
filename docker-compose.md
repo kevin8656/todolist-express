@@ -15,17 +15,17 @@ version: "3"             //此為docker-compose語法版本號
 
 services:                //services是要建立的容器清單
   api:                   //為自己的容器自由命名，這邊第一個命名叫做api
-    build: .             //build . 是指build同目錄下的docker file
+    build: .            //build . 是指build同目錄下的docker file
     ports:               //開放對外port對應
       - "3000:3000"
-    environment:         //在此台容器中設定環境變數
+    environment:         //在此台容器中設定環境變數
       - DB_HOST=mongodb  //這邊的mongodb是下面那個容器的名字，在docker-compose.yml中可以自由互相呼叫
       - DB_PORT=27017
       - DB_DATABASE=test1
       - DB_USER=root
       - DB_PASS=s1mpl3
   mongodb:               //第二個容器
-    image: mongo         //此容器使用到的是網路上的docker image
+    image: mongo         //此容器使用到的是網路上的docker image
     ports: 
       - "27017:27017"
 
@@ -47,13 +47,13 @@ services:                //services是要建立的容器清單
 # docker-compose up -d
 ```
 
-下圖圖片中可看出，docker-compose已開始啟動docker容器，詳細步驟請參考docker-compose.yml檔案以及此圖中的log
+下圖圖片中可看出，docker-compose已開始啟動docker容器，詳細步驟請參考docker-compose.yml檔案以及此圖中的log
 
 ![](/assets/docker-compose_3.png)
 
-這邊執行完成後就完成docker容器啟動囉，可以測試看看自己所設定的環境是否可以存取了！
+這邊執行完成後就完成docker容器啟動囉，可以測試看看自己所設定的環境是否可以存取了！
 
-4.若要關閉此docker-compose描述檔中的docker 容器，可使用以下指令：
+4.若要關閉此docker-compose描述檔中的docker 容器，可使用以下指令：
 
 ```bash
 # docker-compose down
