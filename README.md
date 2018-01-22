@@ -1,5 +1,6 @@
-# 20180119-Express todoList with mongo db
-> 筆者的vscode有使用之擴充功能，提供參考，紅框為應該跟本專案有關係之擴充功能
+# Express todoList with mongo db
+
+> 引言：筆者的vscode有使用之擴充功能，提供參考，紅框為應該跟本專案有關係之擴充功能
 
 ![](/assets/extended-functionality_1.png)
 
