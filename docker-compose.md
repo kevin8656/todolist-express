@@ -2,13 +2,34 @@
 
 一、在虛擬機上安裝docker-compose
 
+> 可參考此官方文件：https://docs.docker.com/compose/install/#install-compose
+
 ![](/assets/docker-compose_1.png)
 
 二、在專案中建立docker-compose.yml檔案
 
 > 以下內容提供參考
 
-![](/assets/docker-compose_2.png)
+```yml
+version: "3"             //此為docker-compose語法版本號
+
+services:                //services是要建立的容器清單
+  api:                   //為自己的容器自由命名，這邊第一個命名叫做api
+    build: .             //build . 是指build同目錄下的docker file
+    ports:               //開放對外port對應
+      - "3000:3000"
+    environment:         //在此台容器中設定環境變數
+      - DB_HOST=mongodb  //這邊的mongodb是下面那個容器的名字，在docker-compose.yml中可以自由互相呼叫
+      - DB_PORT=27017
+      - DB_DATABASE=test1
+      - DB_USER=root
+      - DB_PASS=s1mpl3
+  mongodb:               //第二個容器
+    image: mongo         //此容器使用到的是網路上的docker image
+    ports: 
+      - "27017:27017"
+
+```
 
 三、docker-compose是用於快速在集群中部署分佈式的應用程式,將此docker-compose.yml檔案傳入docker的底層linux伺服器後，開始執行啟動動作。
 
