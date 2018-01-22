@@ -1,6 +1,14 @@
 # Express todoList with mongo db
 
-> 引言：筆者的vscode有使用之擴充功能，提供參考，紅框為應該跟本專案有關係之擴充功能
+> 此份文件與範例適合有Express專案建立基礎，並且有聽過noSQL是什麼的人來練習。
+
+> Express基礎可參考：http://expressjs.com/zh-tw/
+
+> noSQL是？：https://zh.wikipedia.org/wiki/NoSQL 
+
+---------
+
+> 筆者的vscode有使用之擴充功能，提供參考，紅框為應該跟本專案有關係之擴充功能
 
 ![](/assets/extended-functionality_1.png)
 
