@@ -33,6 +33,8 @@ services:                //services是要建立的容器清單
 
 三、docker-compose是用於快速在集群中部署分佈式的應用程式,將此docker-compose.yml檔案傳入docker的底層linux伺服器後，開始執行啟動動作。
 
+> 在此範例中，docker-compose.yml檔案是在跟上次所寫的docker file同目錄中
+
 1.進入到docker-compose.yml檔案所在的資料夾中
 
 ```bash
