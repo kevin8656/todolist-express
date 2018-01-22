@@ -51,6 +51,8 @@ services:                //services是要建立的容器清單
 
 ![](/assets/docker-compose_3.png)
 
+這邊執行完成後就完成docker容器啟動囉，可以測試看看自己所設定的環境是否可以存取了！
+
 4.若要關閉此docker-compose描述檔中的docker 容器，可使用以下指令：
 
 ```bash
